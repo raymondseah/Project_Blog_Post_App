@@ -126,7 +126,7 @@ mongoose.connect( mongoURI, { useNewUrlParser: true, useUnifiedTopology: true } 
   .then(response => {
     // DB connected successfully
     console.log('DB connection successful')
-    app.listen(port, () => {
+    app.listen(process.env.PORT || port, () => {
       console.log(`App listening on port: ${port}`)
     })
   })
