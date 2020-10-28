@@ -1,0 +1,26 @@
+<%- include('../partials/header'); %>
+    <h1><%= title %></h1>
+    <div class="container">
+
+
+
+        <form method="POST" action="/stories/<%= id %>?_method=PATCH">
+            <!-- Blog Title -->
+            <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" class="form-control" name="Title" id="Title" value="<%= data.title %>">
+            </div>
+
+            <!-- Story -->
+            <div class="form-group">
+                <label for="Story">Story</label>
+                <textarea class="form-control" name="Story" id="Story" rows="10" value="<%= data.story %>"></textarea>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+<%- include('../partials/footer'); %>

@@ -1,0 +1,32 @@
+<%- include ('../partials/header'); %>
+    <h1><%= title %></h1>
+    <div class="container homepage">
+        
+   
+              
+
+        <div class="board"> 
+
+            <% data.forEach((item) => { %>
+                <div class="col-sm">
+  
+                    <p class="title">
+                        <a href="/stories/<%= item._id %>" style="color: black"><%= 'Title: ' + item.title %></a>
+                    </p>
+                    <p class="date">
+                        <%= 'Created on: ' + item.created_at.toDateString() %>
+                    </p>
+                    </div>
+    
+
+            <% }) %>
+        </div>
+
+     
+
+
+    </div>
+
+
+<%- include ('../partials/footer'); %>
+    

@@ -1,0 +1,25 @@
+<%- include('../partials/header'); %>
+    <h1><%= title %></h1>
+    <div class="container show">
+
+      
+
+        <form method="POST" action="/stories">
+            <!-- Blog Title -->
+            <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" class="form-control" name="Title" id="Title">
+            </div>
+
+            <!-- Story -->
+            <div class="form-group">
+                <label for="Story">Story</label>
+                <textarea class="form-control" name="Story" id="Story" rows="10"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+<%- include('../partials/footer'); %>

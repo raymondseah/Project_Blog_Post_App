@@ -1,0 +1,28 @@
+<%- include ('../partials/header'); %>
+    <div class="container show">
+
+        <p class="show_header"><%= 'Date Created: ' %></p>
+        <p class="show_content"><%= data.created_at.toDateString() %></p>
+
+        <p class="show_header"><%= 'Title: '  %></p>
+        <p class="show_content"><%= data.title %></p>
+
+        <p class="show_header"><%= 'Blog Post: ' %></p>
+        <p class="show_content"><%=  data.story%></p>
+
+
+        <% if ( user !== null && data.created_by === user._id) { %>
+        <div class="action-buttons">
+            <a class="btn btn-primary" href="/stories/<%= data._id %>/edit">Edit</a>
+            <form method="POST" action="/stories/<%= data._id %>?_method=DELETE">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+
+        <% } %>
+    </div>
+
+
+
+<%- include ('../partials/footer'); %>
+    
