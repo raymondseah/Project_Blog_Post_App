@@ -16,10 +16,6 @@
                     <p class="date">
                         <%= 'Created on: ' + item.created_at.toDateString() %>
                     </p>
-<!-- 
-                    <p>
-                        <%= userdata %>
-                    </p> -->
 
                     <% let name = userdata.find(user => user._id == item.created_by) %>
                     <p class="name">
