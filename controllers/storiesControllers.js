@@ -1,13 +1,29 @@
 const _ = require('lodash')
 const storiesModel = require('./../models/storiesModels')
+const usersModels = require('./../models/usersModels')
 
 const controllers = {
     listAllStories : (req,res) => {
         storiesModel.find()
-            .then(results => {
-                res.render('stories/index', {
-                    title : "All the Stories so Far",
-                    data : results
+            .then(result => {    
+                let storydata = result 
+                console.log(storydata)    
+                
+                console.log(req.session)
+                usersModels.find()
+                .then(userResults => {
+                    console.log(userResults)
+                    res.render('stories/index', {
+                        userdata : userResults,
+                        data: storydata,
+                        title : "All"
+                        
+                    })
+
+                })
+                .catch(err => {
+                    console.log(err)
+                    res.redirect('/stories')
                 })
             })
     },
@@ -91,9 +107,6 @@ const controllers = {
                         created_at: newDate,
                         title:req.body.Title,
                         story:req.body.Story,
- 
-
-
                     }
                 )
                     .then(dateResult => {
@@ -155,3 +168,31 @@ const controllers = {
 }
 
 module.exports = controllers
+
+
+
+
+
+
+
+// const controllers = {
+//     listAllStories : (req,res) => {
+//         storiesModel.find()
+//             .then(results => {
+//                 res.render('stories/index', {
+//                     title : "All the Stories so Far",
+//                     data : results
+//                 })
+                
+//                 usersModels.find()
+//                 .then(userResults => {
+//                     res.render('stories/index', {
+//                         userdata : userResults
+//                     })
+//                 })
+//                 .catch(err => {
+//                     console.log(err)
+//                     res.redirect('/stories')
+//                 })
+//             })
+//     },
