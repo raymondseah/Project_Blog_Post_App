@@ -175,24 +175,3 @@ module.exports = controllers
 
 
 
-// const controllers = {
-//     listAllStories : (req,res) => {
-//         storiesModel.find()
-//             .then(results => {
-//                 res.render('stories/index', {
-//                     title : "All the Stories so Far",
-//                     data : results
-//                 })
-                
-//                 usersModels.find()
-//                 .then(userResults => {
-//                     res.render('stories/index', {
-//                         userdata : userResults
-//                     })
-//                 })
-//                 .catch(err => {
-//                     console.log(err)
-//                     res.redirect('/stories')
-//                 })
-//             })
-//     },
