@@ -16,7 +16,7 @@ const controllers = {
                     res.render('stories/index', {
                         userdata : userResults,
                         data: storydata,
-                        title : "All"
+                        title : "All Stories so far"
                         
                     })
 
